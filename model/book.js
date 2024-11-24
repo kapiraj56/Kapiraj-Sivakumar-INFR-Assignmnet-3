@@ -1,15 +1,18 @@
-// MVC --> Model , View , Controller (Routers)
-let mongoose = require('mongoose')
-// create a model class
-let bookModel = mongoose.Schema({
-    Name:String,
-    Author:String,
-    Published:String,
-    Description:String,
-    Price:Number
-},
-{
-    collection:"Bio_books"
-}
-)
-module.exports = mongoose.model('Book',bookModel)
+// MVC --> Model, View, Controller (Routers)
+const mongoose = require('mongoose');
+
+// Create a model class for Book
+const bookModel = mongoose.Schema(
+  {
+    Name: { type: String, required: true },
+    Author: { type: String, required: true },
+    Published: { type: String, required: true },
+    Description: { type: String, required: true },
+    Price: { type: Number, required: true }
+  },
+  {
+    collection: "Bio_books" // Specify the MongoDB collection name
+  }
+);
+
+module.exports = mongoose.model('Book', bookModel);
