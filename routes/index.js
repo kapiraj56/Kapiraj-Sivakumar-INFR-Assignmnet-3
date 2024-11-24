@@ -1,29 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const userController = require('../controllers/userController');
 
-/* GET index page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home' });
-});
-/* GET home page. */
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home' });
-});
-/* GET about us page. */
-router.get('/aboutus', function(req, res, next) {
-  res.render('index', { title: 'About Us' });
-});
-/* GET Product page. */
-router.get('/product', function(req, res, next) {
-  res.render('index', { title: 'Product' });
-});
-/* GET Services page. */
-router.get('/service', function(req, res, next) {
-  res.render('index', { title: 'Service' });
-});
-/* GET contact me page. */
-router.get('/contactus', function(req, res, next) {
-  res.render('index', { title: 'Contact us' });
-});
+router.get('/', (req, res) => res.render('index', { title: 'Home Page' }));
+router.get('/users', userController.getAllUsers);
+router.post('/users', userController.createUser);
+router.get('/users/:id', userController.getUserById);
+router.put('/users/:id', userController.updateUser);
+router.delete('/users/:id', userController.deleteUser);
 
 module.exports = router;
+
