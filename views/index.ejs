@@ -1,7 +1,17 @@
-  <%- include Partials/header.ejs %>
-  <%- include Partials/main_nav.ejs %>
-  <!--Main Content-->
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    
-<%- include Partials/footer.ejs %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <header><%- include('header') %></header>
+    <main>
+        <h1>Welcome to Your App</h1>
+        <a href="/users">View Users</a>
+    </main>
+    <footer><%- include('footer') %></footer>
+</body>
+</html>

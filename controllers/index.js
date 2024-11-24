@@ -1,0 +1,13 @@
+var express = require('express');
+var router = express.Router();
+var userController = require('../controllers/userController');
+
+router.get('/', (req, res) => res.render('index', { title: 'Home Page' }));
+router.get('/users', userController.getAllUsers);
+router.post('/users', userController.createUser);
+router.get('/users/:id', userController.getUserById);
+router.put('/users/:id', userController.updateUser);
+router.delete('/users/:id', userController.deleteUser);
+
+module.exports = router;
+
