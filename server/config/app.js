@@ -3,37 +3,37 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
-
-let indexRouter = require('../routes/index');
-let usersRouter = require('../routes/users');
-let bookRouter = require('../routes/book')
+var router = express.Router();
 
 let app = express();
-let mongoose = require('mongoose');
-let DB = require('./db');
-// point my mongoose to the URI
-mongoose.connect(DB.URI);
-let mongoDB = mongoose.connection;
-mongoDB.on('error',console.error.bind(console,'Connection Error'))
-mongoDB.once('open',()=>{
-  console.log('MongoDB Connected')
-})
-mongoose.connect(DB.URI,{useNewURIParser:true,
-  useUnifiedTopology:true
-})
+
 // view engine setup
-app.set('../views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
-app.use(express.static(path.join(__dirname, '../node_modules')));
+app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, '../../node_modules')));
+
+let mongoose = require('mongoose');
+let mongoDB = mongoose.connection;
+let DB = require('./db');
+//mongoose.connect('mongodb://127.0.0.1:27017/AssignmentLib');
+mongoose.connect(DB.URI);
+mongoDB.on('error',console.error.bind(console,'Connection Error'));
+mongoDB.once('open',()=>{console.log("Mongo DB is connected")});
+//mongoose.connect(DB.URI);
+let indexRouter = require('../routes/index');
+let usersRouter = require('../routes/users');
+let AssignmentsRouter = require('../routes/Assignment_trackers');
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/books',bookRouter);
+app.use('/assignmentslist', AssignmentsRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
