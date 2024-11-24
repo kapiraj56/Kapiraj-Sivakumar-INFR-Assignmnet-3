@@ -4,15 +4,14 @@ const mongoose = require('mongoose');
 // Create a model class for Book
 const bookModel = mongoose.Schema(
   {
-    Name: { type: String, required: true },
-    Author: { type: String, required: true },
-    Published: { type: String, required: true },
-    Description: { type: String, required: true },
-    Price: { type: Number, required: true }
+    Name:String,
+    Subject:String,
+    Deadline:String,
+    Overview:String,
+    Weight:Number,
   },
   {
-    collection: "Bio_books" // Specify the MongoDB collection name
-  }
-);
+    collection: "Assignment_trackers"
+  });
 
-module.exports = mongoose.model('Book', bookModel);
+module.exports = mongoose.model('Assignment', assignmentModel);
