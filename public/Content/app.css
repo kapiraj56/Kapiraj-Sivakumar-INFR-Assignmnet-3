@@ -1,0 +1,170 @@
+/*custom css goes here */
+@charset "UTF-8"; /* CSS Document */ 
+/* The body tag style applies to all elements on the page */ 
+/* Color scheme hexadecimal values: 008296 004B57 00090A 003138 002C33*/
+
+@media only screen
+and (min-width : 960px) {
+body 
+{ 
+    color: white;
+    background: black;
+    background: -moz-linear-gradient(45deg, #008296, #002C33);
+    background: -webkit-linear-gradient(45deg, #008296, #002C33);
+    background: -o-linear-gradient(45deg, #008296, #002C33);
+    background: linear-gradient(to top,#008296, #002C33); 
+    font-family: Verdana, Geneva, Arial, sans-serif; 
+    padding:0px; 
+    margin:0px; 
+} 
+/* The wrapper ID style is used with a div tag to provide a 960px wide page */ 
+#wrapper 
+{ 
+    width: 960px;
+    height: 800px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color:#008296 ; 
+} 
+/* The right-column ID style is floated right */ 
+#right-column 
+{ 
+    float: right; 
+    width: 600px;
+    height: 600px; 
+    background-color:#004B57; 
+} 
+/* The left-column ID style is floated left */ 
+#left-column 
+{ 
+    float: left; 
+    width: 360px;
+    background-color:#002C33; 
+    height:600px; 
+} 
+/* Defining a style for a set of tags separated by commas applies the style to all tags */ 
+h1,h2,h3,h4,h5,h6,p,li 
+{ 
+    margin-left:15px; 
+} 
+#footer 
+{ 
+    height:80px; 
+    background-color: #002C33;
+}
+#banner
+{ 
+    height:120px; 
+    background-color:#003138; 
+} 
+/* Defining a style for a set of tags not separated by commas applies the style only to all tags within the preceding tag*/ 
+#banner h1 
+{ 
+    color: white; 
+} 
+/* Advanced Web design relies on class or ID styles, never tables */ 
+/* This clear class style terminates float */ 
+.clear
+{ 
+    clear: both; 
+}
+
+video 
+{
+    width: 400px;
+    padding: 15px;
+    margin: 15px;
+    background-color:black;
+    border:2px white solid;
+    box-shadow: 10px 10px 5px black;
+}
+
+@media only screen
+and (max-width : 480px) {
+body 
+{
+    color: white;
+    background: black;
+    background: -moz-linear-gradient(45deg, #008296, #002C33);
+    background: -webkit-linear-gradient(45deg, #008296, #002C33);
+    background: -o-linear-gradient(45deg, #008296, #002C33);
+    background: linear-gradient(to top,#008296, #002C33); 
+    font-family: Verdana, Geneva, Arial, sans-serif; 
+    padding:0px; 
+    margin:0px; 
+}
+h1,h2,h3,h4,h5,h6,p,li {
+margin-left:15px;
+margin-top:0px;
+}
+#wrapper {width: 100%;
+}
+#right-column {
+width:100%;
+float: none;
+height: 1200px;
+background-color: #004B57;
+}
+#left-column {
+float: none;
+height:120px;
+width:100%;
+background-color: #002C33;
+}
+#footer {
+height:80px;
+background-color: #002C33;
+}
+#banner{
+height:100px;
+background-color:#003138;
+}
+
+    }
+}
+
+@media only screen
+and (max-width : 960px) and (min-width : 481px) {
+    body {
+        color: white;
+        background: black;
+        background: -moz-linear-gradient(45deg, #008296, #002C33);
+        background: -webkit-linear-gradient(45deg, #008296, #002C33);
+        background: -o-linear-gradient(45deg, #008296, #002C33);
+        background: linear-gradient(to top,#008296, #002C33); 
+        font-family: Verdana, Geneva, Arial, sans-serif; 
+        padding:0px; 
+        margin:0px; 
+        }
+        h1,h2,h3,h4,h5,h6,p,li {
+        margin-left:15px;
+        margin-top:0px;
+        }
+        #wrapper {width: 100%;
+        height: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color:#008296;
+        }
+        #right-column {
+        float: none;
+        height: 600px;
+        background-color: #004B57;
+        }
+        #left-column {
+        float: none;
+        height:120px;
+        background-color: #002C33;
+        }
+        #footer {
+        height:80px;
+        background-color: #002C33;
+        }
+        #banner{
+        height:60px;
+        background-color: #003138;
+        }
+        .clear{
+        clear: both;
+        }
+    }
