@@ -1,17 +1,14 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+let mongoose = require('mongoose');
 
-// Define the schema for assignments
-const assignmentSchema = new Schema({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  dueDate: { type: Date, required: true },
-  status: { type: String, enum: ['Pending', 'Completed'], default: 'Pending' },
+// create a model class
+let assignmentModel = mongoose.Schema({
+    Name:String,
+    Subject:String,
+    Deadline:String,
+    Overview:String,
+    Weight: Number
+},
+{
+    collection:"Assignment_trackers"
 });
-
-// Create the model using the schema
-const assignmentModel = mongoose.model('Assignment', assignmentSchema);
-
-// Export the model
-module.exports = assignmentModel;
-
+module.exports = mongoose.model('Assignment',assignmentModel);

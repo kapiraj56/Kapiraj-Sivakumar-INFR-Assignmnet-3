@@ -1,0 +1,68 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Assignment Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Assignment Name"
+                    name="Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subjectTextField">Subject</label>
+                    <input type="text" class="form-control"
+                    id="subjectTextField"
+                    placeholder="Enter the Subject"
+                    name="Subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="deadlineTextField">Year</label>
+                    <input type="text" class="form-control"
+                    id="deadlineTextField"
+                    placeholder="Enter Deadline"
+                    name="Deadline" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="overviewTextArea">Overview</label>
+                    <textarea type="text" class="form-control"
+                    id="overviewTextArea"
+                    placeholder="Enter a brief Overview of the Assignment"
+                    name="Overview" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="weightTextField">Weight</label>
+                    <input type="text" class="form-control"
+                    id="weightTextField"
+                    placeholder="Enter the Assignment's Weight"
+                    name="Weight" required>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/assignmentslist" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
