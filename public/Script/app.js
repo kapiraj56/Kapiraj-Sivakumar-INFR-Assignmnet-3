@@ -1,8 +1,8 @@
 // immediately invoked function expression
-// IIFI
+
 (function(){
-    function start(){
+    function Start(){
         console.log("Server Started");
     }
-    window.addEventListener("load",start);
+    window.addEventListener("load",Start);
 })();
